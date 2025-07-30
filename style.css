@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url(./assets/ChatGPT\ Image\ Jul\ 29\,\ 2025\,\ 12_30_48\ PM.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* Live Clock */
+#liveClock {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+/* Container */
+.operators {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Style */
+.operators button {
+  position: relative;
+  height: 60px;
+  width: 260px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 1px;
+  backdrop-filter: blur(5px);
+  z-index: 0;
+}
+
+.operators button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #3cb371, #2e8b57, #3cb371);
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.operators button:hover::before {
+  opacity: 1;
+}
+
+.operators button:hover {
+  color: #fffbe6;
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+/* Button ripple click effect (optional) */
+.operators button:active {
+  transform: scale(0.98);
+}
+
+/* Clock rotation animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer credit */
+footer {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 14px;
+  color: #ccc;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
